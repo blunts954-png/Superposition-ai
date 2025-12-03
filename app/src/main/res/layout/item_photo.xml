@@ -1,20 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView 
+<com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="120dp"
     android:layout_margin="4dp"
     app:cardBackgroundColor="@color/surface_dark"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="2dp">
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp">
 
-    <ImageView
-        android:id="@+id/imageViewPhoto"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:contentDescription="Photo" />
+        android:layout_height="match_parent">
+
+        <!-- Photo Image -->
+        <ImageView
+            android:id="@+id/imageViewPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:contentDescription="Photo"
+            tools:src="@mipmap/ic_launcher" />
+
+        <!-- Selection Overlay -->
+        <View
+            android:id="@+id/viewSelectionOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#8000BCD4"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <!-- Category Badge (Top Left) -->
+        <TextView
+            android:id="@+id/textViewCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|start"
+            android:layout_margin="6dp"
+            android:background="#CC000000"
+            android:paddingStart="6dp"
+            android:paddingEnd="6dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:elevation="4dp"
+            android:visibility="gone"
+            tools:text="🤳"
+            tools:visibility="visible" />
+
+        <!-- Face Count Badge (Top Right) -->
+        <TextView
+            android:id="@+id/textViewFaceCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|end"
+            android:layout_margin="6dp"
+            android:background="#CC000000"
+            android:paddingStart="6dp"
+            android:paddingEnd="6dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:textSize="12sp"
+            android:textColor="#FFFFFF"
+            android:elevation="4dp"
+            android:visibility="gone"
+            tools:text="👤3"
+            tools:visibility="visible" />
+
+        <!-- Selection Checkmark (Bottom Right) -->
+        <TextView
+            android:id="@+id/textViewSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="6dp"
+            android:text="✓"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#00BCD4"
+            android:elevation="4dp"
+            android:visibility="gone" />
+
+    </FrameLayout>
 
 </com.google.android.material.card.MaterialCardView>
-
